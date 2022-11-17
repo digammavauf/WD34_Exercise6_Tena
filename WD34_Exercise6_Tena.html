@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover General Nakar</title>
+    <style>
+	  <!--
+      @import url('https://fonts.googleapis.com/css2?family=Atma&family=Euphoria+Script&display=swap');
+      body {
+        background-color: steelblue;
+      }
+      .vbg {
+        position: fixed;
+        top: -192px;
+        left: -108px;
+        z-index: -99;
+        width: 100%;
+        height: 100%;
+      }
+      ul#navbar {
+        font-family: 'Atma', cursive;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 25%;
+        background-color: rgb(241, 241, 241, 0.5);
+        border-radius: 8px;
+        position: fixed;
+        top: 10px;
+        left: calc(87.5% - 160px);
+        width: 150px;
+        height: calc(100% - 20px);
+        overflow: auto;
+      }
+      ul#navbar li {
+        text-align: center;
+      }
+      ul#navbar li a img {
+        width: 100px;
+        height: 100px;
+        border: thin dotted midnightblue;
+      }
+      ul#navbar li a {
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+      }
+      ul#navbar li a.active {
+        background-color: midnightblue;
+        color: whitesmoke;
+        font-weight: bold;
+      }
+      ul#navbar li a:hover:not(.active) {
+        background-color: yellow;
+        color: midnightblue;
+        font-weight: bold;
+      }
+      div.details {
+        border: thick solid rgba(255, 255, 0, 0.5);
+        border-radius: 16px;
+        margin: 32px 10px 10px calc(12.5% + 10px);
+        padding: 16px;
+        width: calc(75% - 222px);
+        background: rgba(88, 88, 22, 0.5);
+        color: white;
+        box-shadow: -8px -8px 8px 0px rgba(0,0,0,0.5);
+        -webkit-box-shadow: -8px -8px 8px 0px rgba(0,0,0,0.5);
+        -moz-box-shadow: -8px -8px 8px 0px rgba(0,0,0,0.5);
+      }
+      div.details h1 {
+        color: midnightblue;
+        margin: -48px 0 0 0;
+        font-family: 'Euphoria Script', cursive;
+        font-size: 48px;
+        text-shadow: -4px -4px 2px rgba(255, 255, 0, 0.75);
+      }
+      div.details h3 {
+        border-bottom: 1px dotted yellow;
+        color: whitesmoke;
+        margin: 24px 0 0 0;
+        font-family: Atma, cursive;
+        font-size: 24px;
+        text-shadow: -2px -2px 1px rgba(255, 255, 0, 0.75);
+      }
+      div.details p {
+        margin: 8px 0 0 0;
+        font-family: 'Atma', cursive;
+        text-indent: 32px;
+        text-align: justify;
+        clear: left;
+      }
+      div.details a.booking, div.details a.booking:link, div.details a.booking:visited {
+        font-family: 'Atma', cursive;
+        background-color: rgba(88, 88, 22, 0.5);
+        color: rgba(255, 255, 0, 0.75);
+        border: 2px solid rgba(255, 255, 0, 0.75);
+        margin: 8px 0;
+        padding: 8px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+      }
+      div.details a.booking:hover, div.details a.booking:active {
+        background-color: rgba(255, 255, 0, 0.75);
+        color: whitesmoke;
+      }
+      div.details ul {
+        list-style-type: circle;
+      }
+      div.details ul li ul {
+        list-style-type: square;
+      }
+      div.details ul li {
+        font-family: 'Atma', cursive;
+      }
+      .bold {
+        font-weight: bold;
+      }
+      div.details img {
+        margin-top: 8px;
+        width: 960px;
+        min-width: 240px;
+        max-width: calc(100% - 256px);
+        border-radius: 8px;
+        box-shadow: -8px -8px 8px 0px rgba(0,0,0,0.5);
+        -webkit-box-shadow: -8px -8px 8px 0px rgba(0,0,0,0.5);
+        -moz-box-shadow: -8px -8px 8px 0px rgba(0,0,0,0.5);
+      }
+      div.details p img {
+        float: left;
+        margin: 0 16px 0 0;
+        width: 240px;
+        min-width: 240px;
+        max-width: calc(100% - 256px);
+        border-radius: 4px;
+        box-shadow: 0 0 8px 0 rgb(255, 255, 0);
+        -webkit-box-shadow: 0 0 8px 0 rgb(255, 255, 0);
+        -moz-box-shadow: 0 0 8px 0 rgb(255, 255, 0);
+      }
+      div.details table#comments tr th, div.details table#comments tr td {
+        font-family: 'Atma', cursive;
+      }
+      div.details form label, div.details form input, div.details form textarea  {
+        font-family: 'Atma', cursive;
+      }
+      div.details table.simple, div.details table.complex {
+        font-family: 'Atma', cursive;
+        border: 0;
+        border-collapse: collapse;
+        margin-top: 8px;
+        width: 960px;
+        min-width: 240px;
+        max-width: calc(100% - 256px);
+        box-shadow: -8px -8px 8px 0px rgba(0,0,0,0.5);
+        -webkit-box-shadow: -8px -8px 8px 0px rgba(0,0,0,0.5);
+        -moz-box-shadow: -8px -8px 8px 0px rgba(0,0,0,0.5);
+      }
+      div.details p table.simple, div.details p table.complex {
+        font-family: 'Atma', cursive;
+        border: 0;
+        border-collapse: collapse;
+        margin-top: 8px;
+        width: 240px;
+        min-width: 240px;
+        max-width: calc(100% - 256px);
+        box-shadow: 0 0 8px 0 rgb(255, 255, 0);
+        -webkit-box-shadow: 0 0 8px 0 rgb(255, 255, 0);
+        -moz-box-shadow: 0 0 8px 0 rgb(255, 255, 0);
+      }
+      div.details table.simple caption, div.details table.complex caption {
+        color: midnightblue;
+        font-family: 'Euphoria Script', cursive;
+        font-weight: bold;
+        font-size: 32px;
+        text-shadow: -4px -4px 2px rgba(25, 25, 112, 0.5);
+      }
+      div.details table.simple tr th {
+        width: 150px;
+        min-width: 120px;
+        max-width: 150px;
+        border-bottom: 2px solid rgba(255, 255, 0, 0.5);
+        background: rgba(255, 255, 0, 0.5);
+        color: midnightblue;
+        text-align: right;
+        padding-right: 8px;
+      }
+      div.details table.complex tr th {
+        width: 150px;
+        min-width: 120px;
+        max-width: 150px;
+        border-bottom: 2px solid rgba(255, 255, 0, 0.5);
+        background: rgba(255, 255, 0, 0.5);
+        color: midnightblue;
+      }
+      div.details table.simple tr td {
+        width: calc(100% - 150px);
+        min-width: 120px;
+        max-width: calc(100% - 150px);
+        border-bottom: 2px solid rgba(255, 255, 0, 0.5);;
+        padding-left: 8px;
+      }
+      div.details table.complex tr td {
+        width: calc(100% - 150px);
+        min-width: 120px;
+        max-width: calc(100% - 150px);
+        border-bottom: 2px solid rgba(255, 255, 0, 0.5);;
+        text-align: center;
+      }
+      div.details address {
+        font-family: Atma, cursive;
+        text-align: center;
+      }
+	  -->
+    </style>
+  </head>
+  <body>
+	<div class="vbg">
+      <video autoplay muted loop>
+        <source src="Himno-ng-General-Nakar-Quezon.mp4" type="video/mp4">
+      </video>
+    </div>
+    <ul id="navbar">
+      <li><a class="active" href="#gennak"><img src="LGU-Logo.png" alt="General Nakar Logo">General Nakar</a></li>
+      <li><a href="#whatobrin">What to bring?</a></li>
+      <li><a href="#howtogett">How to get there?</a></li>
+      <li><a href="#wheretogo">Where to go?</a></li>
+      <li><a href="#modoftran">Mode of Transport</a></li>
+      <li><a href="#hotandres">Hotels and Resorts</a></li>
+      <li><a href="#fooanddri">Food and Drinks</a></li>
+      <li><a href="#festivals">Festivals</a></li>
+      <li><a href="#sportour">Sports Tourism</a></li>
+      <li><a href="#moreinfo">More Info</a></li>
+      <li><a href="#comments">Comments</a></li>
+    </ul>
+    <div class="details">
+      <h1><a name="gennak"></a>General Nakar</h1>
+      <table class="simple">
+        <caption>Quick Facts</caption>
+        <tr><th>Total Land Area</th><td>162,613.3352 hectares</td></tr>
+        <tr><th>Forest</th><td>151,342 hectares (93.1%)</td></tr>
+        <tr><th>A&D</th><td>11,271 hectares (6.9%)</td></tr>
+        <tr><th>Households</th><td>6,759</td></tr>
+        <tr><th>Population</th><td>29,512</td></tr>
+        <tr><th>Males</th><td>15,368 (52.1%)</td></tr>
+        <tr><th>Females</th><td>14,144 (47.9%)</td></tr>
+        <tr><th>Population Density</th><td>0.18/hectare</td></tr>
+      </table>
+      <h3>GENERAL GUILLERMO PEÑAMANTE NAKAR
+        <br>(1906-1942)
+      </h3>
+      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/69tN8NyIee8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <p>Pinuno ng 1st Batallion 71st Infantry Division ng USAFFE na lumaban sa pwersang hapon sa Hilagang Luzon noong ikalwang digmaang pandaigdig.</p>
+      <p>Isinilang sa barrio Anoling, Infanta, Tayabas (ngayo'y Quezon), ika-10 ng Hunyo, 1906. Nagtapos sa Philippine Military Academy at naging kapitan ng Philippine Constabulary ng sumiklab ang Digmaan, 1941.</p>
+      <p>Nadakip sa Minuri, Jones, Isabela. Tumangging makipagtulungan sa Hapon. Dinala sa Maynila kung saan siya binitay, Setyembre 1942. Ginawaran ng ranggong Brigadier General ni Pangulong Elpidio Quirino, ika-21 ng Hulyo, 1949.</p>
+      <p>Ipinangalan sa kanya ang bagong bayan na GENERAL NAKAR, QUEZON, 1949 at ang SOUTHERN LUZON COMMAND sa Lucena bilang KAMPO HENERAL GUILLERMO NAKAR.</p>
+      <h3>Geographical Location</h3>
+      <p>General Nakar is the northernmost municipality of Quezon Province. It is bounded on the north by the Municipality of Dingalan, Aurora, on the east by Polilio Strait, on the south by the municipalities of Real and Infanta, Quezon, and on the west by the Provinces of Rizal, Bulacan and Nueva Ecija. It lies geographically between 1210 8’ and 1210 42’ east longitudes, and 140 45’ and 150 20’ north latitudes.</p>
+      <h3>Political Subdivision and Land Area</h3>
+      <p>General Nakar is the largest municipality of Quezon Province with 161,640 hectares land area. About 72.36 % of the municipality’s total land area is covered by barangays Umiray and Pagsangahan sharing 38.57 % and 33.79%, respectively.</p>
+      <h3>Creation</h3>
+      <p>The local people, headed by Forester Fortunato A. Avellano, had initiated the move for the creation of the Municipality of General Nakar through a petition paper. Such endeavor was realized, with the help of the late Congressman Fortunato Suarez and the late Governor Santayana of Quezon, when Executive Order No. 246 was signed by His Excellency, the late President Elpidio Quirino on 21 July 1949. The new town was curved out from Infanta, Quezon, which was its mother municipality then called “Distrito Pelagio” and was named in honor of the late Guillermo P. Nakar, a hero of World War II and a native of Barangay Anoling.</p>
+      <h3>Political Background</h3>
+      <p>From its creation in 1949 to the present, the municipality of General Nakar has been administered by fourteen (14) mayors, viz: Hon. Agripino L. Quinto (appointed) 1949-1951 Hon. Catalino P. Ritual (elected) 1952-1955 Hon. Leon S. Ruidera, Sr.(elected) 1956-1964 Hon. Ildefonso P. Buendicho (elected) 1964-1972 Hon Abdon R. Cuerdo (elected) 1972-1986 Hon. Tranqulino R. Luzano (appointed) 1986-1988 Hon. Epiginio B. Pascual (appointed) 1988 Hon. Arturo R. dela Cruz (appointed) 1988 Hon. Calixto A. Ruidera (elected) 1988-1992 Hon. Hernando P. Avellaneda, Sr.(elected) 1992-2001 Hon. Leovegildo R. Ruzol (elected) 2001-2004 Hon. Hernando P. Avellaneda, Sr.(elected) 2004-2007 Hon. Leovegildo R. Ruzol (elected) 2007-2016 Hon. Eliseo R. Ruzol Sr. (elected) 2016-present.</p>
+    </div>
+    <div class="details">
+      <h1><a name="whatobrin"></a>What to bring?</h1>
+      <h3>Entry Requirements</h3>
+      <ul>
+        <li><span class="bold">Tourist Registration</span>
+          <ul>
+            <li>name</li>
+            <li>sex</li>
+            <li>age</li>
+          </ul>
+        </li>
+        <li><span class="bold">Vehicle Registration</span>
+          <ul>
+            <li>plate no.</li>
+            <li>make</li>
+            <li>model</li>
+            <li>year</li>
+          </ul>
+        </li>
+        <li><span class="bold">Environmental and Admission Fee</span>
+          <ul>
+            <li>&#x20B1; 10.00 per pax</li>
+            <li>&#x20B1; 25.00 per bicycle</li>
+            <li>&#x20B1; 50.00 per two-wheeled motorized vehicle</li>
+            <li>&#x20B1; 100.00 per three- or four-wheeled (and up) motorized vehicle</li>
+          </ul>
+        </li>
+      </ul>
+      <h3>Travel Packing Checklist</h3>
+      <ul>
+        <li><span class="bold">Personal Belongings</span>
+          <ul>
+            <li>Your phone and charger, along with chargers for any other electronics you’re taking.</li>
+            <li>Adaptors if you’re traveling to a country with a different style of plug socket.</li>
+            <li>All necessary travel documents. Do you need a visa? Do you have overseas health insurance?</li>
+            <li>Your passport if you’re crossing borders.</li>
+            <li>Your travel tickets.</li>
+            <li>A print out of the booking details for anywhere you’ve arranged to stay.</li>
+            <li>Money. Carry some of the currency of your destination with you to cover any immediate costs like transfers from your airport or a quick snack and drink after landing.</li>
+          </ul>
+        </li>
+        <li><span class="bold">Clothing</span>
+          <ul>
+            <li>Socks and underwear</li>
+            <li>Enough outfits to see you through the duration of your stay, taking into account how easily you’ll be able to wash them at your destination</li>
+            <li>Swimwear, if you’re expecting to use it. Similarly, winter clothes, walking boots, or other weather-dependent clothing as needed</li>
+            <li>Comfy nightwear. But don’t worry, most hotels will provide gowns and slippers</li>
+            <li>Appropriate shoes. If you’re planning to walk extensively, or will be in adverse weather, you’ll probably find walking boots useful. If, on the other hand, you’re planning to spend most of your holiday at the beach, you might prefer to bring sandals</li>
+          </ul>
+        </li>
+        <li><span class="bold">Toiletries</span>
+          <ul>
+            <li>Face masks</li>
+            <li>Alcohol</li>
+            <li>Wet wipes</li>
+            <li>Enough medication for your entire stay.</li>
+            <li>Speak to your doctor or pharmacist in advance to get the right dose.</li>
+            <li>Toothbrush and toothpaste</li>
+            <li>Deodorant</li>
+            <li>Any haircare or skincare products you think you’ll need</li>
+            <li>Shaving equipment, if needed</li>
+            <li>Sanitary pads/tampons if you or your teenager need it</li>
+            <li>Sunscreen</li>
+            <li>Towels</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="details">
+      <h1><a name="howtogett"></a>How to get there?</h1>
+      <p>General Nakar in Quezon Province, Philippines can be reached when you fly to the Philippines via aircraft to Manila via NAIA then through Manila East Road from Antipolo Rizal to Famy, Laguna thence to Famy-Infanta Road. From Infanta is about 3km national road to Infanta-General Nakar Bridge that stretches across the Agos River. An alternate route to Gen. Nakar is through Marcos Highway via Marikina-Infanta-General Nakar.</p>
+      <img src="How-to-get-there.png" alt="Hot to get there">
+    </div>
+    <div class="details">
+      <h1><a name="wheretogo"></a>Where to go?</h1>
+      <h3>Pamplona-Catablingan Beaches</h3>
+      <p><img src="Pamplona-Catablingan-Beaches.png" alt="Pamplona-Catablingan Beaches">To experience the natural beauty of General Nakar, Pamplona-Catablingan Beaches is the best place to visit. You can relax and enjoy your vacation while experiencing its 3.74 km length, the dark blue water, beach line with coconut trees and clean sand make it the perfect beach. There are different resorts provides for most of a vacationer's needs while remaining on the premises (lodging, swimming fool, food, drink, sports, entertainment, shopping, etc.)
+        <table class="simple">
+          <tr><th>Location</th><td>Brgy. Pamplona &amp; Brgy. Catablingan</td></tr>
+          <tr><th>Distance from Municipal Hall</th><td>5km</td></tr>
+          <tr><th>Activities</th><td>Sea bathing, jogging, taking picture, walking, surfing, sand castle, boating, kayaking, volleyball, kite-flying, watching sunrise, watching sunset, fishing, camping, picnicking and beach wedding</td></tr>
+          <tr><th>Est. Area for Tourist Staging</th><td>29 hectares</td></tr>
+        </table>
+      </p>
+      <h3>Municipal Ground/Building</h3>
+      <p><img src="Municipal-Ground-Building.png" alt="Municipal Ground/Building">Municipal Ground of Gen. Nakar provides a wide landscape for different event. The Municipal Building itself already gives tourist an impression of beauty and a flashback of history by merely looking at Gen. Guillermo’s Monument, the town’s Hero. Also, here you can find the Tourism information desk and the Pasalubong center.
+        <table class="simple">
+          <tr><th>Location</th><td>Brgy. Anoling</td></tr>
+          <tr><th>Distance from Municipal Hall</th><td>0km</td></tr>
+          <tr><th>Activities</th><td>Gapo at Palusong festival, motocross, concert, flag ceremony, parade, walking, jogging, biking, taking picture, camping and buying souvenirs</td></tr>
+          <tr><th>Est. Area for Tourist Staging</th><td>1.23 hectares ground for motocross activity; 0.65 hectares municipal ground facade</td></tr>
+        </table>
+      </p>
+      <h3>Anoling-Umiray Earth Trail Road</h3>
+      <p><img src="Anoling-Umiray-Earth-Trail-Road.jpg" alt="Anoling-Umiray Earth Trail Road">Tourists will experience the long journey to the end of General Nakar’s town while eyes are satisfied with the beautiful and unique natural landscape. This is also where the Brusko Pacific Coast Epic Race/ Sandugo Pacific Coast Ultra 100 and Motorbike racing game is held. etc.
+        <table class="simple">
+          <tr><th>Location</th><td>Brgy. Anoling, Brgy. Magsikap, Brgy. San Marcelino, Brgy. Sablang, Brgy. Maligaya, Brgy. Canaway, and Brgy. Umiray</td></tr>
+          <tr><th>Distance from Municipal Hall</th><td>316km</td></tr>
+          <tr><th>Activities</th><td>Road trip, biking, jogging, walking, exploring, taking picture and motocross</td></tr>
+          <tr><th>Est. Area for Tourist Staging</th><td>316 road length km</td></tr>
+        </table>
+      </p>
+      <h3>Tinipak</h3>
+      <p><img src="Tinipak.png" alt="Tinipak">Tinipak Collective Attraction Sites are the most popular tourist destination in General Nakar and most visited by the tourist, a hidden gem that boasts white marbled rocks and pristine water. Here are also the various attractions sites like falls, summit, rock formation, hot spring, camping ground and room accommodation establishment that will provide a delight experience which will bring back tourists.
+        <table class="simple">
+          <tr><th>Location</th><td>Brgy. Pagsangahan</td></tr>
+          <tr><th>Distance from Municipal Hall</th><td>118km</td></tr>
+          <tr><th>Activities</th><td>Road trip, biking, jogging, walking, exploring, taking picture and motocross</td></tr>
+          <tr><th>Est. Area for Tourist Staging</th><td>2.37 hectares Tinipak River; 3.3 hectares Summit</td></tr>
+        </table>
+      </p>
+    </div>
+    <div class="details">
+      <h1><a name="modoftran"></a>Mode of Transport</h1>
+      <table class="complex">
+        <caption>Banka</caption>
+        <thead>
+          <tr><th>Barangay</th><th>Passenger Capacity</th><th>Half Day</th><th>Whole Day</th><th>Remarks</th></tr>
+        </thead>
+        <tfoot>
+          <tr><th>Boatman/Bankero</th><td colspan="4">Jet Sollano
+            <br>Roonie Rillion
+            <br>Jessie Flora
+            <br>Edgar Sollano
+            <br>Milbert Ritual
+          </td></tr>
+          <tr><th>Contact Person</th><td colspan="4">Roberto Ritual (09096206421)
+          </td></tr>
+        </tfoot>
+        <tbody>
+          <tr><th>Magsikap Proper (Anibungan)</th><td>8-12 pax</td><td>&#x20B1; 1,000.00</td><td>&#x20B1; 1,500.00</td><td rowspan="8">depende sa pakikipag-usap sa driver, depende sa laki ng banka, at may dagdag na bayad para sa iba pang gawain</td></tr>
+          <tr><th>San Marcelino (Tulaog)</th><td>8-12 pax</td><td>&#x20B1; 1,500.00</td><td>&#x20B1; 2,000.00</td></tr>
+          <tr><th>Sablang Proper</th><td>8-12 pax</td><td>&#x20B1; 1,000.00</td><td>&#x20B1; 1,500.00</td></tr>
+          <tr><th>Canaway (Loilo)</th><td>8-12 pax</td><td>&#x20B1; 3,000.00</td><td>&#x20B1; 3,500.00</td></tr>
+          <tr><th>Canaway (Pinagpandayan)</th><td>8-12 pax</td><td>&#x20B1; 3,500.00</td><td>&#x20B1; 4,000.00</td></tr>
+          <tr><th>Maligaya Proper</th><td>8-12 pax</td><td>&#x20B1; 2,000.00</td><td>&#x20B1; 2,500.00</td></tr>
+          <tr><th>Canaway Proper</th><td>8-12 pax</td><td>&#x20B1; 2,500.00</td><td>&#x20B1; 3,000.00</td></tr>
+          <tr><th>Canaway (Masanga)</th><td>8-12 pax</td><td>&#x20B1; 2,500.00</td><td>&#x20B1; 3,000.00</td></tr>
+          <tr><th>Umiray Proper</th><td>8-12 pax</td><td>&#x20B1; 4,500.00</td><td>&#x20B1; 5,000.00</td></tr>
+        </tbody>
+      </table>
+      <table class="complex">
+        <caption>Jeep</caption>
+        <thead>
+          <tr><th>Barangay</th><th rowspan="2">Individual Fare</th><th colspan="5">Hire</th></tr>
+          <tr><th>Barangay</th><th>Passenger Capacity</th><th>Half Day</th><th>Whole Day</th><th>Overnight</th><th>Remarks</th></tr>
+        </thead>
+        <tfoot>
+          <tr><th>Contact Persons/Drivers</th><td colspan="6">
+            Larry Borreo (09076864177)
+            <br>Erwin Sacdalan (09397908961)
+            <br>Adrian Sanchez (09480935414)
+          </td></tr>
+        </tfoot>
+        <tbody>
+          <tr><th>Magsikap Proper (Anibungan)</th><td>&#x20B1; 70.00</td><td>25 pax</td><td>&#x20B1; 1,750.00</td><td>&#x20B1; 3,500.00</td><td>&#x20B1; 4,000.00</td><td rowspan="8">depende sa pakikipag-usap sa driver, depende sa haba ng jeep, at may dagdag na bayad para sa abala</td></tr>
+          <tr><th>San Marcelino (Tulaog)</th><td>&#x20B1; 80.00</td><td>25 pax</td><td>&#x20B1; 2,000.00</td><td>&#x20B1; 4,000.00</td><td>&#x20B1; 4,500.00</td></tr>
+          <tr><th>Sablang Proper</th><td>&#x20B1; 100.00</td><td>25 pax</td><td>&#x20B1; 2,500.00</td><td>&#x20B1; 5,000.00</td><td>&#x20B1; 5,500.00</td></tr>
+          <tr><th>Maligaya Proper</th><td>&#x20B1; 120.00</td><td>25 pax</td><td>&#x20B1; 3,000.00</td><td>&#x20B1; 6,000.00</td><td>&#x20B1; 6,500.00</td></tr>
+          <tr><th>Canaway Proper</th><td>&#x20B1; 140.00</td><td>25 pax</td><td>&#x20B1; 3,500.00</td><td>&#x20B1; 7,000.00</td><td>&#x20B1; 7,500.00</td></tr>
+          <tr><th>Canaway (Masanga)</th><td>&#x20B1; 160.00</td><td>25 pax</td><td>&#x20B1; 4,000.00</td><td>&#x20B1; 8,000.00</td><td>&#x20B1; 8,500.00</td></tr>
+        </tbody>
+      </table>
+      <table class="complex">
+        <caption>Habal-habal</caption>
+        <thead>
+          <tr><th>Barangay</th><th rowspan="2">Individual Fare</th><th colspan="5">Hire</th></tr>
+          <tr><th>Barangay</th><th>Passenger Capacity</th><th>One-way</th><th>Whole Day</th><th>Overnight</th><th>Remarks</th></tr>
+        </thead>
+        <tfoot>
+          <tr><th>Contact Persons/Drivers</th><td colspan="6">
+            Jeffrey Aimanor (09491751750)
+            <br>Jovie Moises (09460052265)
+            <br>Mark Anthony (09991548930)
+            <br>Anthony (09517158390)
+            <br>Kano (09079026010)
+            <br>Tana (09512166616)
+          </td></tr>
+        </tfoot>
+        <tbody>
+          <tr><th>Magsikap Proper (Anibungan)</th><td>&#x20B1; 100.00</td><td>2 pax</td><td>&#x20B1; 200.00</td><td>&#x20B1; 600.00-1,000.00</td><td>&#x20B1; 1,200.00</td><td rowspan="8">hindi umaalis kapag isa lang ang pasahero (dalawa dapat); depende sa pakikipag-usap sa driver; at may dagdag na bayad para sa abala</td></tr>
+          <tr><th>San Marcelino (Tulaog)</th><td>&#x20B1; 150.00</td><td>2 pax</td><td>&#x20B1; 300.00</td><td>&#x20B1; 750.00-1,200.00</td><td>&#x20B1; 1,500.00</td></tr>
+          <tr><th>Sablang Proper</th><td>&#x20B1; 200.00</td><td>2 pax</td><td>&#x20B1; 400.00</td><td>&#x20B1; 850.00-1,400.00</td><td>&#x20B1; 1,700.00</td></tr>
+          <tr><th>Maligaya Proper</th><td>&#x20B1; 300.00</td><td>2 pax</td><td>&#x20B1; 600.00</td><td>&#x20B1; 1,200.00-1,600.00</td><td>&#x20B1; 2,400.00</td></tr>
+          <tr><th>Canaway Proper</th><td>&#x20B1; 350.00</td><td>2 pax</td><td>&#x20B1; 700.00</td><td>&#x20B1; 1,400.00-1,800.00</td><td>&#x20B1; 2,800.00</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="details">
+      <h1><a name="hotandres"></a>Hotels and Resorts</h1>
+      <h3>Sifsy Resort</h3>
+      <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/YrhNJET2oR0?start=8&end=420" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <br>
+      <a class="booking" href="https://www.facebook.com/Sifsy-Resort-1389272877808934">Book Now</a>
+    </div>
+    <div class="details">
+      <h1><a name="fooanddri"></a>Food and Drinks</h1>
+      <h3>Tinuto</h3>
+	  <iframe width="560" height="315" src="https://www.youtube.com/embed/Gk_xoWZn-VQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	  <h3>Sinukmani</h3>
+	  <iframe width="560" height="315" src="https://www.youtube.com/embed/zD6ygMP1DYE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	  <h3>Tuba</h3>
+	  <iframe width="560" height="315" src="https://www.youtube.com/embed/7Uyu_WuzIB8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	  <h3>Nipa Jam</h3>
+	  <iframe width="560" height="315" src="https://www.youtube.com/embed/3uu6Jdw59KU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	  <h3>Talangka at Ubod</h3>
+	  <iframe width="560" height="315" src="https://www.youtube.com/embed/qIHjgNtpCHc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="details">
+      <h1><a name="festivals"></a>Festivals</h1>
+	  <h3>Gapo at Palusong Festival</h3>
+      <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FGeneralNakarLGU%2Fvideos%2F260199984819465%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+      <p>Maiuugnay ang pagkakataon ng kapistahan na kasalukuyan ay naging bahagi na ng ating tradisyon at naging sangkap na rin ng kabuuang kultura sa isang ritwal, ang GAPO sinasakatuparan ng may ari ng pananim at taniman.</p>
+      <p>Matapos nito'y magaganap na ang PALUSONG at konsepto ng bayanihan pagkatapos daratal ang panahon ng paghihintay, panahon ng pangagalaga sa pananim at kaalinsabay ng mga panahong ito ay ang walang patid na pananalangin para sa isang masaganang ani. Kung kaya't nagbunga ang lahat ng pagpapagal na ang naging resulta ay ang masaganang ani.</p>
+      <p>Dahil dito kung kaya't nararapat na makapagdaos ng isang pagsasama-sama bilang pagpapasalamat at upang maganap ang isang gawaing pinaka-kabuuan na kahulugan ng lahat ng pag-aalay, pagsasakripisyo at paghihintay, isang pagdiriwang na may mas higit pang kasayahan, inuman, awitan at sayawan na may mas malalim pang kahulugan...ang PIYESTA!</p>
+	  <h3>Panupoy Festival</h3>
+	  <iframe width="560" height="315" src="https://www.youtube.com/embed/6g5SZTK8DWM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="details">
+      <h1><a name="sportour"></a>Sports Tourism</h1>
+	  <h3>Philippine Overland Expedition</h3>
+	  <iframe width="560" height="315" src="https://www.youtube.com/embed/mXumGBvWZ2Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	  <br>
+	  <iframe width="560" height="315" src="https://www.youtube.com/embed/MUGCdDMVspU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	  <h3>Brusko Pacific Coast Epic Race</h3>
+      <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fsandugosandals.sdg%2Fvideos%2F1003159277743659%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+	  <h3>Bikepacking Philippines</h3>
+	  <iframe width="560" height="315" src="https://www.youtube.com/embed/R5ICgxQG_PU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	  <h3>Motocross challenge</h3>
+	  <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FGeneralNakarLGU%2Fvideos%2F612395943645490%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+	</div>
+    <div class="details">
+      <h1><a name="moreinfo"></a>More Info</h1>
+      <p>For inquiries, get in touch with:</p>
+      <address>
+        <span class="bold">HON. ELISEO R. RUZOL</span>
+        <br>Municipal Mayor
+        <br>Office Contact: (042)535-7104 | lgu@generalnakar.gov.ph
+        <br><br>
+        <span class="bold">MR. JONATHAN D. SAYNES</span>
+        <br>Senior Tourism Operations Officer
+        <br>Office Contact: (042) 795-5402 | jonathansaynes14@gmail.com
+        <br>Personal Contact: 0977-766-0934 | 0921-590-9878
+      </address>
+    </div>
+    <div class="details">
+      <h1><a name="comments"></a>Comments</h1>
+      <form action="//submit.form" id="ContactUs100" method="post" onsubmit="return ValidateForm(this);">
+        <script type="text/javascript">
+          function ValidateForm(frm) {
+          if (frm.Name.value == "") { alert('Name is required.'); frm.Name.focus(); return false; }
+          if (frm.FromEmailAddress.value == "") { alert('Email address is required.'); frm.FromEmailAddress.focus(); return false; }
+          if (frm.FromEmailAddress.value.indexOf("@") < 1 || frm.FromEmailAddress.value.indexOf(".") < 1) { alert('Please enter a valid email address.'); frm.FromEmailAddress.focus(); return false; }
+          if (frm.Comments.value == "") { alert('Please enter comments or questions.'); frm.Comments.focus(); return false; }
+          return true; }
+        </script>
+        <table id="comments">
+          <tr><td><label for="Name">Name*:</label></td><td><input name="Name" type="text" maxlength="60"></td></tr>
+          <tr><td><label for="PhoneNumber">Phone number:</label></td> <td><input name="PhoneNumber" type="text" maxlength="43"></td></tr>
+          <tr><td><label for="FromEmailAddress">Email address*:</label></td><td><input name="FromEmailAddress" type="text" maxlength="90"></td></tr>
+          <tr><td><label for="Comments">Comments*:</label></td><td><textarea name="Comments" rows="7" cols="40"></textarea></td></tr>
+          <tr><td>* - required fields</td><td><div style="float:right"><a href="https://www.100forms.com" id="lnk100" title="form to email">form to email</a></div><input name="skip_Submit" type="submit" value="Submit"><script src="https://www.100forms.com/js/FORMKEY:74YSYQ9BAP7N/SEND:johnphiliptena@digammavauf.com" type="text/javascript"></script></td></tr>
+        </table>
+      </form>
+    </div>
+   </body>
+</html>
