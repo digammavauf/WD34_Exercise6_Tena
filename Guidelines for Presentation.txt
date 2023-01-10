@@ -1,0 +1,5 @@
+5-minute report
+1. Intro Name, Batch
+2. Text Stack: HTML, CSS, Javascript
+3. Explain why did you chose the place for your topic
+4. Quick tour on your webpage
